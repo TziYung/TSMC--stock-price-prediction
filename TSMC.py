@@ -47,9 +47,9 @@ from tensorflow import keras
 
 model=keras.Sequential([
     keras.layers.LSTM(64,input_shape=train_data.shape[1:],return_sequences=True,activation='relu'),
-    keras.layers.LSTM(64,input_shape=train_data.shape[1:],return_sequences=True,activation='relu'),
+    keras.layers.LSTM(64,return_sequences=True,activation='relu'),
     keras.layers.Dropout(0.2),
-    keras.layers.LSTM(32,input_shape=train_data.shape[1:],activation='relu',return_sequences=False),
+    keras.layers.LSTM(32,activation='relu',return_sequences=False),
     keras.layers.Dense(64,activation='relu'),
     keras.layers.Dense(2)
 ])
